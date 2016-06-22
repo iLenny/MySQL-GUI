@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Leibnix
+ * 
  */
 public class MySQLUI extends Application {
     @Override
@@ -23,6 +23,7 @@ public class MySQLUI extends Application {
         
         primaryStage.setTitle("MySQL UI");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
     
