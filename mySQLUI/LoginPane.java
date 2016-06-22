@@ -28,7 +28,7 @@ import javafx.stage.Stage;
  * LoginPane class:
  * The purpose of this class is to represent the login screen, in
  * order to prompt the user to login. This class is inheriting one
- * of the layouts from the javaFX library--the Pane class. 
+ * of the layouts from the javaFX library--the Pane class.
  */
 public class LoginPane extends AnchorPane {
     // Labels:
@@ -95,6 +95,11 @@ public class LoginPane extends AnchorPane {
 //        passwordField.setStyle("-fx-background-color: BLACK; -fx-text-fill: WHITE;");
 //        serverField.setStyle("-fx-background-color: BLACK; -fx-text-fill: WHITE;");
 //        databaseField.setStyle("-fx-background-color: BLACK; -fx-text-fill: WHITE;");
+
+        userField.setText("cl56-dreamteam");
+        passwordField.setText("BrooklynCollege");
+        serverField.setText("217.199.187.197:3306");
+        databaseField.setText("cl56-dreamteam");
         
         userField.setPrefColumnCount(25);
         
@@ -121,7 +126,8 @@ public class LoginPane extends AnchorPane {
                 String password = passwordField.getText();
                 String server = serverField.getText();
                 String database = databaseField.getText();
-                String DB_URL = "jdbc:mysql://" + server + "/" + database +"?useSSL=false";
+//                String DB_URL = "jdbc:mysql://" + server + "/" + database +"?useSSL=false";
+                String DB_URL = "jdbc:mysql://" + server + "/";
                 try {
                     
                     print("|FROM LoginPane|: Verifying database connection...");
@@ -137,8 +143,9 @@ public class LoginPane extends AnchorPane {
                     
                     messageLabel.setText("CONNECTION FAILED\nInput information may be incorrect \nOR server may be currently down");
                     messageLabel.setTextFill(Color.FIREBRICK);
-                    System.err.println("|FROM LoginPane|: CONNECTION FAILED");
-                    System.err.println("Please check that the input information is correct");
+                    print(ex.getMessage());
+//                    System.err.println("|FROM LoginPane|: CONNECTION FAILED");
+//                    System.err.println("Please check that the input information is correct");
                     
                 }
                 

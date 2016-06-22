@@ -19,7 +19,7 @@ public class MySQLUI extends Application {
         LoginPane loginPane = new LoginPane();
         loginPane.setCurrentStage(primaryStage);        
         
-        Scene scene = new Scene(loginPane, 350, 350);
+        Scene scene = new Scene(loginPane, 370, 350);
         
         primaryStage.setTitle("MySQL UI");
         primaryStage.setScene(scene);
